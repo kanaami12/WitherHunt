@@ -1,0 +1,8 @@
+name: WitherHunt
+main: com.plugin.ftb.witherhunt.Main
+version: 1.0
+author: kanaami
+commands:
+  ftb28:
+    usage:  /<command>
+    default: true
