@@ -19,11 +19,11 @@ public class FutabaCommand implements CommandExecutor {
 		
 		if(sender instanceof Player) {
 			Player player = (Player)sender;
-			if(Bukkit.getPlayerExact("kanaami") == null) {
+			if(Bukkit.getPlayerExact("ftb28") == null) {
 				player.sendMessage(ChatColor.RED + "ftb28さんはいません");
 				return true;
 			}
-			Player ftb28 = Bukkit.getPlayerExact("kanaami");
+			Player ftb28 = Bukkit.getPlayerExact("ftb28");
 			for(ItemStack itemStack : player.getInventory().getContents()) {
 				if(itemStack != null) {
 					if(itemStack.getType() == Material.BLAZE_ROD || itemStack.getType() == Material.ENDER_PEARL
