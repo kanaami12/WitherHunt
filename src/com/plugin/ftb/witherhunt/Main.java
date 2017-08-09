@@ -6,7 +6,7 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Main extends JavaPlugin{
 	
-	public static String prefix = ChatColor.GRAY + "[エンドラ討伐]" + ChatColor.RESET;
+	public static String prefix = ChatColor.GRAY + "[ウィザー討伐]" + ChatColor.RESET;
 	public static Main plugin;
 	
 	public static boolean isHard = false;

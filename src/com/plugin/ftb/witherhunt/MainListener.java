@@ -186,7 +186,7 @@ public class MainListener implements Listener {
 	}
 	
 	/*
-	 * エンダードラゴンが倒されたとき、通知する
+	 * ウィザーが倒されたとき、通知する
 	 */
 	@EventHandler
 	public void onDeath(EntityDeathEvent event) {
