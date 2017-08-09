@@ -69,6 +69,9 @@ public class MainListener implements Listener {
 	public void onEnchant(EnchantItemEvent event) {
 		Player player = event.getEnchanter();
 		ItemStack itemStack = event.getItem();
+		if(itemStack == null || itemStack.getType() == null || event.getEnchantsToAdd().isEmpty() || !event.getEnchantsToAdd().containsKey(Enchantment.LOOT_BONUS_MOBS)) {
+			return;
+		}
 		Material material = itemStack.getType();
 		String itemName = "";
 		if(material.equals(Material.DIAMOND_SWORD) && event.getEnchantsToAdd().get(Enchantment.LOOT_BONUS_MOBS) == 3) {
