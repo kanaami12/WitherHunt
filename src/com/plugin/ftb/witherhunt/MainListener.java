@@ -24,6 +24,7 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.inventory.PrepareAnvilEvent;
 import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.world.PortalCreateEvent;
 import org.bukkit.inventory.Inventory;
@@ -31,6 +32,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import net.md_5.bungee.api.ChatColor;
+import net.minecraft.server.v1_12_R1.Chunk;
 
 public class MainListener implements Listener {
 
@@ -179,6 +181,7 @@ public class MainListener implements Listener {
 	/*
 	 * ウィザーがスポーンしたとき通知
 	 */
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onSpawn(CreatureSpawnEvent event) {
 		if(event.getEntityType().equals(EntityType.WITHER)) {

@@ -23,6 +23,7 @@ public class Main extends JavaPlugin{
 		
 		//タスク開始
 		new MainTask().runTaskTimer(plugin, 0, 20);
+		new SpawnTask().runTaskTimer(plugin, 0, 40);
 		
 		//スコア登録
 		MainScoreboard.registerScoreboard();
