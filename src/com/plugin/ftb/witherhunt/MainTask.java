@@ -7,13 +7,9 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.block.Biome;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import io.netty.util.internal.ThreadLocalRandom;
 import net.md_5.bungee.api.ChatColor;
 
 public class MainTask extends BukkitRunnable {
@@ -39,6 +35,7 @@ public class MainTask extends BukkitRunnable {
 										+ ChatColor.DARK_RED + "ネザー要塞" + ChatColor.RESET + "を見つけた(座標: " + x1
 										+ ", " + y1 + ", " + z1 + ")");
 								arrived.add(player.getUniqueId());
+								Main.netheryousai.put(player, new Location(player.getWorld(), x1, y1, z1));
 							}
 							
 							//5%の確率でスポーンさせる

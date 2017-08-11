@@ -7,7 +7,6 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.EnderDragon;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Wither;
@@ -18,13 +17,10 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.enchantment.EnchantItemEvent;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.event.inventory.PrepareAnvilEvent;
 import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.world.PortalCreateEvent;
 import org.bukkit.inventory.Inventory;
@@ -32,7 +28,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import net.md_5.bungee.api.ChatColor;
-import net.minecraft.server.v1_12_R1.Chunk;
 
 public class MainListener implements Listener {
 
@@ -46,7 +41,6 @@ public class MainListener implements Listener {
 	/*
 	 * アイテムを拾ったとき、プレイヤーネームとアイテムを表示
 	 */
-	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onPickup(PlayerPickupItemEvent event) {
 		Player player = event.getPlayer();
@@ -143,6 +137,7 @@ public class MainListener implements Listener {
 				if(block.getType().equals(Material.OBSIDIAN)) {
 					broadcast("[" + ChatColor.DARK_RED + "ネザー" + ChatColor.RESET + "]" + " " + ChatColor.BOLD + firedPlayer.get(firedPlayer.size()-1).getName() + ChatColor.RESET + "さんが"
 								+ ChatColor.DARK_RED + "ネザーポータル" + ChatColor.RESET + "を開いた(座標: " + block.getLocation().getBlockX() + ", " + block.getLocation().getBlockY() + ", " + block.getLocation().getBlockZ() + ")");
+					Main.netherportal.put(firedPlayer.get(firedPlayer.size() - 1), new Location(event.getWorld(), block.getLocation().getBlockX(), block.getLocation().getBlockY(), block.getLocation().getBlockZ()));
 					return;
 				}
 			}
