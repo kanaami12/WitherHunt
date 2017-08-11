@@ -60,6 +60,10 @@ public class MainListener implements Listener {
 			itemName = ChatColor.GREEN + "ドロップ増加Ⅲのダイヤの剣";
 			sendPickupMessage("[" + ChatColor.GREEN + "ダイヤ剣" + ChatColor.RESET + "]", itemName, player);
 		}
+		if(material.equals(Material.NETHER_STAR)) {
+			itemName = ChatColor.BLUE + "ネザースター";
+			sendPickupMessage("[" + ChatColor.BLUE + "スター" + ChatColor.RESET + "]", itemName, player);
+		}
 	}
 	
 	/*
