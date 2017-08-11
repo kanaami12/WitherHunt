@@ -202,7 +202,6 @@ public class MainListener implements Listener {
 		}
 	}
 	
-	
 	/*
 	 * 拾ったアイテムを通知
 	 * @param itemName 拾ったアイテムの名前
