@@ -3,6 +3,7 @@ package com.plugin.ftb.witherhunt;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -38,7 +39,7 @@ public class Main extends JavaPlugin{
 		//スコア登録
 		MainScoreboard.registerScoreboard();
 	
-		//5秒おきにスコア更新
+		//2秒おきにスコア更新
 		MainScoreboard.startTask(2);
 	}
 }
