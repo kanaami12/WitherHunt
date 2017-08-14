@@ -26,17 +26,11 @@ public class FutabaCommand implements CommandExecutor {
 			Player ftb28 = Bukkit.getPlayerExact("ftb28");
 			for(ItemStack itemStack : player.getInventory().getContents()) {
 				if(itemStack != null) {
-					if(itemStack.getType() == Material.BLAZE_ROD || itemStack.getType() == Material.ENDER_PEARL
-							|| itemStack.getType().equals(Material.SKULL_ITEM) && itemStack.getDurability() == 1) {
+					if(itemStack.getType().equals(Material.SKULL_ITEM) && itemStack.getDurability() == 1) {
 						Material item = itemStack.getType();
 						ftb28.getInventory().addItem(itemStack);
 						String name;
-						if(item == Material.BLAZE_ROD) {
-							name = "ブレイズロッド";
-						}
-						else if(item == Material.ENDER_PEARL) {
-							name ="エンダーパール";
-						}else if(item == Material.SKULL_ITEM) {
+						if(item == Material.SKULL_ITEM) {
 							name = "ウィザースケルトンの頭";
 						}
 						else {

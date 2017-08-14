@@ -20,8 +20,8 @@ public class SpawnTask extends BukkitRunnable{
 				if(Math.abs(x) <= 6) continue;		//6マス以内にはわかないように
 				for(int z=-16; z<16; z++) {
 					if(Math.abs(z) <= 6) continue;	//6マス以内にはわかないように
-					//0.4%の確率でスポーン
-					if(new Random().nextInt(1000) < 4) {
+					//0.1%の確率でスポーン
+					if(new Random().nextInt(1000) < 1) {
 						Location searchLoc = loc.clone().add(x, 0, z);
 					
 						if(searchLoc.getBlock().getType().equals(Material.NETHER_BRICK)) {

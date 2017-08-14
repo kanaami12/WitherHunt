@@ -37,19 +37,6 @@ public class MainTask extends BukkitRunnable {
 								arrived.add(player.getUniqueId());
 								Main.netheryousai.put(player, new Location(player.getWorld(), x1, y1, z1));
 							}
-							
-							//5%の確率でスポーンさせる
-							int ran = new Random().nextInt(100);
-							if(ran < 5) {
-								if(searchLoc.add(0, 1.0, 0).getBlock().getType().equals(Material.AIR)) {
-									if(searchLoc.add(0, 1.0, 0).getBlock().getType().equals(Material.AIR)) {
-										if(searchLoc.add(0, 1.0, 0).getBlock().getType().equals(Material.AIR)) {
-											//上3ブロックがAIRだった場合
-											
-										}
-									}
-								}
-							}
 						}
 					}
 				}
